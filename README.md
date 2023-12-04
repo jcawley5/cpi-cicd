@@ -1,6 +1,6 @@
 # cpi-cicd
 
-Examples linting of CPI flows based on the linting features of
+Example linting of CPI flows based on the linting features of
 
 https://github.com/mwittrock/cpilint
 
