@@ -1,3 +1,4 @@
+name: CPI Linter
 on: [push, workflow_dispatch]
 
 jobs:
@@ -5,9 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     name: CPI Linting
     steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
       - name: cpilint
-        id: cpilint
-        uses: mosteo-actions/docker-run@v1
+        uses: addnab/docker-run-action@v3
         with:
           image: jcawley5/cpilint
-          params: -v ${{ github.workspace }}:/app/cpi/flows  
+          options: -v ${{ github.workspace }}:/app/cpi/flows  
