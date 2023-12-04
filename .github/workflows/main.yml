@@ -14,4 +14,5 @@ jobs:
           image: jcawley5/cpilint
           options: -v ${{ github.workspace }}:/app/cpi/flows
           run: |
-            echo "Running Script"
+            echo "Running Script" |
+            /usr/cpilint-1.0.4/bin/cpilint -rules /app/cpi/rules.xml -directory /app/cpi/flows
