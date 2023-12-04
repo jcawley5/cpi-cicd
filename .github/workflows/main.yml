@@ -1,5 +1,6 @@
 - name: CPILint
   uses: mosteo-actions/docker-run@v1
   with:
-    image: docker push jcawley5/cpilint
-      params: -v ${{ github.workspace }}:/app/cpi/flows  
+    image: jcawley5/cpilint
+    params: -v ${{ github.workspace }}:/app/cpi/flows  
+          
