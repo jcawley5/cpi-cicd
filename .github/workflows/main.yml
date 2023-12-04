@@ -1,9 +1,13 @@
-name: CPI Validation
-on:
-  workflow_dispatch:
+on: [push]
+
 jobs:
-   CPILint:
-    uses: mosteo-actions/docker-run@v1
-    with:
-      image: jcawley5/cpilint
-      params: -v ${{ github.workspace }}:/app/cpi/flows  
+  cpilint:
+    runs-on: ubuntu-latest
+    name: CPI Linting
+    steps:
+      - name: cpilint
+        id: cpilint
+        uses: mosteo-actions/docker-run@v1
+        with:
+          image: jcawley5/cpilint
+          params: -v ${{ github.workspace }}:/app/cpi/flows  
