@@ -1,4 +1,4 @@
-name: CPI Linter
+name: CPI Linter Demo
 on: [push, workflow_dispatch]
 
 jobs:
@@ -7,7 +7,7 @@ jobs:
     name: CPI Linting
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.1.1
       - name: cpilint
         uses: addnab/docker-run-action@v3
         with:
